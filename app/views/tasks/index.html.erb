@@ -1,0 +1,6 @@
+<h1>タスク一覧</h1>
+<%= link_to '新しいタスクを作成', '/tasks/new' %>
+
+<% @tasks.each_with_index do |task, index|%>
+    <%= render partial: 'task', locals: {task: task}%>
+<% end %>
