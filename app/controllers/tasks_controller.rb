@@ -25,10 +25,22 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
   
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(update_params)
+      redirect_to root_path
+    else
+      render 'edit', status: unprocessable_entity
+    end
+  end
 
   private
   def create_params
-      params.require(:task).permit(:content, :due_date)
+      params.require(:task).permit(:content, :due_date).merge(status: :pending)
+  end
+
+  def update_params
+    params.require(:task).permit(:content, :due_date, :status)
   end
 
 end
