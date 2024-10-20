@@ -1,6 +1,29 @@
 <h1>タスク一覧</h1>
-<%= link_to '新しいタスクを作成', '/tasks/new' %>
+<%= link_to '新しいタスクを作成', '/tasks/new', class: "add-task-btn" %>
 
-<% @tasks.each_with_index do |task, index|%>
-    <%= render partial: 'task', locals: {task: task}%>
-<% end %>
+<div class="task-list">
+    <% statuses = @tasks.map {|task| task.status}.uniq %>
+    <% statuses.each do |status| %>
+        <%status_label = case status
+
+            when "pending"
+                "保留中"
+            when "in_progress"
+                "進行中"
+            when "completed"
+                "完了"
+            else
+            end
+
+        %>
+        <div class="task-column">
+            <h2><%= status_label %></h2>
+            <% @tasks.each_with_index do |task, index|%>
+                <% if task.status == status %>
+                  <%= render partial: 'task', locals: {task: task}%>
+                <% end %>
+            <% end %>
+        </div>
+    <% end %>
+</div>
+

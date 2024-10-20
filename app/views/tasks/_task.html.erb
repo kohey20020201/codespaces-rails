@@ -1,3 +1,8 @@
-<h3><%= task.content %></h3>
-<%= link_to "編集", "/tasks/#{task.id}"%>
-<%= link_to "削除", "/tasks/#{task.id}",data: {"turbo-method": :delete, turbo_confirm: "本当に削除しますか?"}%>
+<div class="task-card">
+    <h3><%= task.content %></h3>
+    <p>期限：<%= task.due_date %></p>
+    <div class="task-actions">
+        <%= link_to "編集", "/tasks/#{task.id}", class: "edit-btn"%>
+        <%= link_to "削除", "/tasks/#{task.id}",data: {"turbo-method": :delete, turbo_confirm: "本当に削除しますか?"}, class: "delete-btn"%>
+    </div>
+</div>
