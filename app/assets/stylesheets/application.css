@@ -13,3 +13,112 @@
  *= require_tree .
  *= require_self
  */
+
+ h1 {
+    text-align: center;
+ }
+
+ .add-task-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+ }
+
+ .task-list {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .task-column {
+    width: 30%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+ }
+
+ .task-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+ }
+
+ .task-actions {
+    justify-content: space-between;
+    margin-top: 10px;
+ }
+
+ .edit-btn {
+    background-color: #2196f3;
+    color: white;
+ }
+
+ a.edit-btn {
+    display: inline-block;
+ }
+
+ a.delete-btn {
+    display: inline-block;
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px;
+ }
+
+ form input[type="submit"] {
+    backgroud-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 34px;
+    width: 52px;
+    font-size: 16px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.task-column-new, .task-column-edit {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+}
+
+.task-column-edit form {
+    text-align: center;
+}
+
+.task-column-new form {
+    text-align: center;
+}
+
+form input[type="submit"].update-btn {
+    background-color: #2196F3;
+    margin-top: 10px;
+}
+
+form input[type="submit"].new-btn {
+    background-color: #2196F3;
+    margin-top: 10px;
+}
